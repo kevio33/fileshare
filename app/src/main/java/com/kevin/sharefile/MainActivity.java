@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 
 import com.kevin.sharefile.databinding.ActivityMainBinding;
@@ -26,6 +27,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String text;
 
+
+
+
+    private final String TAG = "kevinYang";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +41,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(activityMainBinding.getRoot());
 
 
-        onClick();
+//        onClick();
+
+        String package_name = getPackageName();
+        String path_internal_storage = getFilesDir().toString();
+        String path_cache = getCacheDir().toString();
+        String path_external = String.valueOf(getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS));
+        String path_external_storage = Environment.getExternalStorageDirectory().toString();
+        String path_external_storage_public = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString();
+        Log.w(TAG+"package name",package_name);
+        Log.w(TAG+"path_internal_storage",path_internal_storage);
+        Log.w(TAG+"path_cache",path_cache);
+        Log.w(TAG+"path_external",path_external);
+        Log.w(TAG+"path_external_storage",path_external_storage);
+        Log.w(TAG+"path_external_storage_public",path_external_storage_public);
+
+        Log.w(TAG+"state",Environment.getExternalStorageState());
+
+
+
     }
 
     private void onClick() {
