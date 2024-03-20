@@ -15,6 +15,8 @@ import com.google.mlkit.vision.documentscanner.GmsDocumentScanning
 import com.google.mlkit.vision.documentscanner.GmsDocumentScanningResult
 import com.kevin.pdfscan.databinding.ActivityMainBinding
 
+
+//通过扫描文件转换为pdf
 class MainActivity : AppCompatActivity() {
 
     lateinit var mainActivityBinding : ActivityMainBinding
@@ -45,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                             val imageUri = pages.get(0).getImageUri()
                         }
                     }
-                    result?.getPdf()?.let { pdf ->
+                    result?.getPdf()?.let { pdf ->//扫描结果，对结果进行操作，一般放进内部存储
                         val pdfUri = pdf.getUri()
                         val pageCount = pdf.getPageCount()
                     }

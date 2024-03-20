@@ -16,3 +16,5 @@ rootProject.name = "sharefile"
 include ':app'
 include ':singletasktest'
 include ':pdfscan'
+include ':broadcasttest'
+include ':servicetest'

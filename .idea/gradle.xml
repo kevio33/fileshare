@@ -11,7 +11,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/broadcasttest" />
             <option value="$PROJECT_DIR$/pdfscan" />
+            <option value="$PROJECT_DIR$/servicetest" />
             <option value="$PROJECT_DIR$/singletasktest" />
           </set>
         </option>

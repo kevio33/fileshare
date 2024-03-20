@@ -36,36 +36,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(activityMainBinding.getRoot());
 
-
-//        onClick();
-
-        String package_name = getPackageName();
-        String path_internal_storage = getFilesDir().toString();
-        String path_cache = getCacheDir().toString();
-        String path_external = String.valueOf(getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS));
-        String path_external_storage = Environment.getExternalStorageDirectory().toString();
-        String path_external_storage_public = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString();
-        Log.w(TAG+"package name",package_name);
-        Log.w(TAG+"path_internal_storage",path_internal_storage);
-        Log.w(TAG+"path_cache",path_cache);
-        Log.w(TAG+"path_external",path_external);
-        Log.w(TAG+"path_external_storage",path_external_storage);
-        Log.w(TAG+"path_external_storage_public",path_external_storage_public);
-
-        Log.w(TAG+"state",Environment.getExternalStorageState());
-
-
+        onClick();
+//        String package_name = getPackageName();
+//        String path_internal_storage = getFilesDir().toString();
+//        String path_cache = getCacheDir().toString();
+//        String path_external = String.valueOf(getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS));
+//        String path_external_storage = Environment.getExternalStorageDirectory().toString();
+//        String path_external_storage_public = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString();
+//        Log.w(TAG+"package name",package_name);
+//        Log.w(TAG+"path_internal_storage",path_internal_storage);
+//        Log.w(TAG+"path_cache",path_cache);
+//        Log.w(TAG+"path_external",path_external);
+//        Log.w(TAG+"path_external_storage",path_external_storage);
+//        Log.w(TAG+"path_external_storage_public",path_external_storage_public);
+//
+//        Log.w(TAG+"state",Environment.getExternalStorageState());
 
     }
 
     private void onClick() {
 
         activityMainBinding.shareText.setOnClickListener(this);
-
         activityMainBinding.sharePicAndText.setOnClickListener(this);
     }
 
@@ -101,12 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     throw new RuntimeException(e);
                 }
             }
-
             sharePic(path);
-
         }
-
-
     }
 
     //读取图片的uri，并且分享
@@ -135,8 +125,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Resources resources = getResources();
         Bitmap bitmap = BitmapFactory.decodeResource(resources,id);
-
-
         return bitmap;
     }
 }
